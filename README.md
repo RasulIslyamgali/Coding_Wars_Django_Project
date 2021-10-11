@@ -2,5 +2,5 @@
 
 Project that created with my friends.
 
--@Rasulislyamgali - backend programmer
--@OlegMel - frontend programmer
+@Rasulislyamgali - backend programmer
+@OlegMel - frontend programmer
