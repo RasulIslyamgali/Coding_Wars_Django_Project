@@ -1,0 +1,57 @@
+{% load widget_tweaks %}
+
+<!-- add 2 extra css classes to field element -->
+<!-- {{ form.title|add_class:"css_class_1 css_class_2" }} -->
+
+<!-- <!DOCTYPE html> -->
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+	<title>CodingWars</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+		<style type="text/css">
+		#form{
+			display: block;
+			align-content: center;
+			align-items: center;
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.button{
+			padding: 11px;
+			font-size: 17px;
+			color: yellowgreen;
+			border-radius: 20%;
+			background-color: green;
+			border: 2px solid black;
+		}
+	</style>
+  </head>
+  <body>
+  <h2 id="current-time" align="center"></h2>
+    <br><h1 align="center" style="font-size: 30px;">Новый раздел</h1>
+	 <div class="form-group">
+	<form method="post" id="form">
+		{% csrf_token %}
+		<div align="center">
+		{{ form.subject_name }}<br>
+		{{ form.subject_description }}<br>
+		<span>{{ error }}</span>
+		<!-- <p align="center"><button type="submit">Добавить</button></p> -->
+		<!-- <input type="submit" name="submit" class="button"> -->
+		<button type="submit" class="btn btn-dark">Создать</button>
+		</div>
+	</form>
+	</div>
+	<br><br><p align="center"><a href="http://127.0.0.1:8000/subject_names/" style="font-size: 20px;" class="link-dark" >Уроки</a></p><br>
+	<h3 align="center" style="font-size: 20px;" class="display-2"><a href="http://127.0.0.1:8000/" class="link-dark" >Coding Wars</a></h3><br>
+	<h3 align="center"><a href="http://127.0.0.1:8000/time/">Помодоро</a></h3>
+	<h2 align="center" style="font-size: 20px;" class="display-2">Since 2020</h2>
+	<script>const setInter = setInterval(() => {
+    const time = Date().toString().split(" ")[4]
+    <!-- console.log(time) -->
+	document.getElementById("current-time").innerText = time
+    }, 1)</script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!-- {& load static %} -->
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"
+	<title>CodingWars</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  </head>
+  <body style="background-color: #a1c4fd;">
+	<h3 id="time" align="center"></h3>
+	<!-- <h2 id="point" align="center"></h2> -->
+	<!-- <h2 id="hours" align="center"></h2> -->
+	<h1 align="center">Помодоро Таймер</h1>
+	<h2 id="minute" align="center"></h2>
+	<h2 id="seconds" align="center"></h2>
+	<!-- <h2 id="milliseconds" align="center"></h2> -->
+	<!-- <script>let n = 10 -->
+	<!-- while (n < 100) { -->
+	<!-- document.getElementById('time').innerText = Date().toString(); -->
+	<!-- }</script> -->
+	<script>setInterval(function() {
+  document.getElementById("time").innerText = Date().toString()
+}, 1000)</script>
+	<script>let time = Date.now()
+	let point = 0
+	let minutes = 35
+	let seconds = 60
+const interval = setInterval(function() {
+  <!-- document.getElementById("hours").innerText = Math.round(-(time - Date.now())/3600000)+ " hours" -->
+  document.getElementById("time").innerText = Date().toString()
+  document.getElementById("minute").innerText = "Осталось " + (minutes - Math.trunc(-(time - Date.now())/60000)) + " минут"
+  if (Math.trunc(-(time - Date.now())/60000) > 0) {
+	document.getElementById("seconds").innerText = "Осталось " + (60*(Math.trunc(-(time - Date.now())/60000) + 1) - Math.trunc(-(time - Date.now())/1000)) + " секунд"
+  <!-- document.getElementById("milliseconds").innerText = -(time - Date.now()) + " milliseconds" -->
+  } else if ((minutes - Math.trunc(-(time - Date.now())/60000)) < 35) {
+  <!-- setInterval don't working -->
+		clearInterval(interval)
+	} else {
+	document.getElementById("seconds").innerText = "Осталось " + (60 - Math.trunc(-(time - Date.now())/1000)) + " секунд"
+	}
+}, 1)</script>
+	</script>
+	<div>
+	<br><br><p align="center"><a href="http://127.0.0.1:8000/subject_names/" style="font-size: 20px;" class="link-dark" >Список разделов</a></p><br>
+	<h3 align="center" style="font-size: 20px;" class="display-2"><a href="http://127.0.0.1:8000/" class="link-dark" >Coding Wars</a></h3><br>
+	<h2 align="center" style="font-size: 20px;" class="display-2">Since 2020</h2><br>
+	</div>
+  </body>
+</html>
+
+<!-- ------------------------------------------ -->
+
+<!-- let start = Date.now() -->
+<!-- setInterval(function() { -->
+  <!-- let time_now = Math.round(-(start - Date.now())/1000) + " seconds" -->
+  <!-- console.log(time_now) -->
+<!-- }, 1000) -->
+
+
+<!-- 9 seconds -->
+
+
+<!-- ---------------------------------- -->
+
+<!-- let start = Date.now() -->
+<!-- setInterval(function() { -->
+  <!-- let time_now = Math.round(-(start - Date.now())/3600000)+ " hours " + Math.round(-(start - Date.now())/60000) + " minutes " + Math.round(-(start - Date.now())/1000) + " seconds " + Date.now() + " milliseconds"  -->
+  <!-- console.log(time_now) -->
+<!-- }, 1000) -->
